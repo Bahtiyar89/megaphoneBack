@@ -8,7 +8,7 @@ const userRoute = require("./routes/users");
 //database
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
     console.log("database is connected successfully!");
   } catch (err) {
     console.log(err);
